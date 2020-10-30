@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"br.com.hkp.showemojis"},{"l":"br.com.hkp.showemojis.apps"},{"l":"br.com.hkp.showemojis.global"},{"l":"br.com.hkp.showemojis.normalizefilenames"},{"l":"br.com.hkp.showemojis.normalizefilenames.gui"}]

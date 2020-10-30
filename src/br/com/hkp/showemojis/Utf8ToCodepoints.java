@@ -1,5 +1,7 @@
 package br.com.hkp.showemojis;
 
+import static br.com.hkp.showemojis.global.Global.EMOJIS_DIRNAME;
+
 /******************************************************************************
  * A finalidade desta classe eh fornecer metodos para converter um emoji 
  * codificado como uma string UTF-8 para uma string de codepoints representados
@@ -22,7 +24,8 @@ package br.com.hkp.showemojis;
  * com a figura referente a ele.
  * <p>
  * Os arquivos com as imagens de emojis utilizados neste projeto foram obtidos 
- * inicialmente na pagina https://emojipedia.org/whatsapp/2.19.352/ 
+ * inicialmente na pagina https://emojipedia.org/whatsapp/2.19.352/. Atraves do
+ * download dessa pagina.
  * 
  * @author "Pedro Reis"
  * @since 29 de outubro de 2020 v1.0
@@ -37,7 +40,27 @@ public final class Utf8ToCodepoints
     
     -------------------------------------------------------------------------*/
     /**
-     * Construtor da classe.
+     * Construtor da classe. 
+     * <p>
+     * O objetivo principal dessa classe eh prover metodos estaticos que recebam
+     * um emoji codificado como uma string utf8 e retorne a string de 
+     * codepoints utilizada para nomear o arquivo PNG que exibe a imagem deste
+     * emoji. 
+     * <p>
+     * Mas esta string nao eh obtida exatamente pela conversao de cada codigo
+     * utf8 em seu respectivo codepoint. Pois alguns dos caracteres utf8 que
+     * definem o emoji podem nao ter seus codepoints incluidos na string de 
+     * codepoints. Exatamente como acontece nas strings de codepoints usadas
+     * para nomear os arquivos com as imagens destes emojis.
+     * <p>
+     * Portanto o construtor dessa classe recebe um emoji codificado em utf8 e
+     * atraves do metodo toString() de um objeto dessa classe eh possivel obter 
+     * os codepoints de cada caractere unicode que constitui a representacao do
+     * emoji passado a este construtor.
+     * <p>
+     * Mas na verdade qualquer string pode ser passada a este construtor e o 
+     * metodo toString() irah retornar os codepoints de todos estes caracteres
+     * assim como seus nomes se os caracteres tiverem nomes.
      * 
      * @param utf8Emoji Um emoji codificado como string utf8
      */
@@ -102,14 +125,16 @@ public final class Utf8ToCodepoints
      */
     public static String utf8ToFilename(final String utf8Emoji)
     {
-        return utf8ToCodepoints(utf8Emoji) + ".png";
+        return EMOJIS_DIRNAME + "/" + utf8ToCodepoints(utf8Emoji) + ".png";
     }//utf8ToFilename()
     
     /*[03]---------------------------------------------------------------------
     
     -------------------------------------------------------------------------*/
     /**
-     * Representacao textual da string utf8
+     * Representacao textual da string utf8 passada como parametro ao construtor
+     * dessa classe exibindo os codepoints de cada caractere dessa string e seu 
+     * respectivo nome se o caractere tiver um nome.
      * 
      * @return Uma descricao textual de um objeto dessa classe
      */
@@ -128,7 +153,7 @@ public final class Utf8ToCodepoints
             (
                 String.format
                 (
-                   "%06x : %s \n",
+                   "U+%06x : %s \n",
                     Character.codePointAt(utf8Emoji, pos),
                     Character.getName(c)
                 )
@@ -156,7 +181,8 @@ public final class Utf8ToCodepoints
         System.out.println("");
         
         System.out.println(utf8ToFilename("👎️"));
-      
+        
+            
     }//main()
     
 }//classe Utf8ToCodepoints

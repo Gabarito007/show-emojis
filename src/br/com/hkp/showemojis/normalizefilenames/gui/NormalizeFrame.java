@@ -9,7 +9,9 @@ import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
 /******************************************************************************
- *
+ * Eh a janela da interface grafica do programa Normalize. Mostrara ao usuario
+ * o progresso do processo de normalizacao de nomes de arquivo.
+ * 
  * @author "Pedro Reis"
  * @since 29 de outubro de 2020 v1.0
  * @version v1.0
@@ -25,7 +27,7 @@ public final class NormalizeFrame extends JFrame
     
     -------------------------------------------------------------------------*/
     /**
-     * 
+     * Configura a janela.
      */
     public NormalizeFrame()
     {
@@ -68,10 +70,11 @@ public final class NormalizeFrame extends JFrame
     
     -------------------------------------------------------------------------*/
     /**
+     * Atualiza a barra de progresso exbindo o status do processo.
      * 
-     * @param value 
+     * @param value O num. de arquivos jah normalizados.
      */
-    public void setProgressBarValue(int value)
+    public void setProgressBarValue(final int value)
     {
         jProgressBar.setValue(value);
         jProgressBar.setString(value + " arquivos");
@@ -81,10 +84,12 @@ public final class NormalizeFrame extends JFrame
     
     -------------------------------------------------------------------------*/
     /**
+     * Torna visivel a barra de progresso e a configura.
      * 
-     * @param value 
+     * @param maximumValue O valor maximo que a barra de progresso pode assumir
+     * que serah exatamente o numero de arquivos a serem normalizados.
      */
-    public void setProgressBarVisible(int maximumValue)
+    public void setProgressBarVisible(final int maximumValue)
     {
         jProgressBar.setStringPainted(true);
         jProgressBar.setForeground(Color.BLACK);
@@ -97,10 +102,12 @@ public final class NormalizeFrame extends JFrame
     
     -------------------------------------------------------------------------*/
     /**
+     * Imprime uma string na area de texto da janela mostrando qual era o nome
+     * do arquivo antes e depois de normalizado.
      * 
-     * @param s 
+     * @param s A string.
      */
-    public void println(String s)
+    public void println(final String s)
     {
         jTextArea.append(s + "\n\n");
         jTextArea.setCaretPosition(jTextArea.getText().length()); 

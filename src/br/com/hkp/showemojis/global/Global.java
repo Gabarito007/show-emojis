@@ -3,7 +3,9 @@ package br.com.hkp.showemojis.global;
 import javax.swing.UIManager;
 
 /******************************************************************************
- *
+ * A funcao desta classe eh fornecer metodos e campos que sejam de acesso para 
+ * todas as outras classes do projeto.
+ * 
  * @author "Pedro Reis"
  * @since 29 de outubro de 2020 v1.0
  * @version v1.0
@@ -11,8 +13,18 @@ import javax.swing.UIManager;
 
 public final class Global
 {
-    public static final String EMOJIS_DIRNAME = "/emoji-images";
+    /**
+     * Eh o nome do diretorio para onde serao movidos os arquivos PNG de imagem
+     * de emojis.
+     */
+    public static final String EMOJIS_DIRNAME = "emoji-images";
     
+    /*[00]---------------------------------------------------------------------
+    
+    -------------------------------------------------------------------------*/
+    /**
+     * Configura os textos do objeto FileChooser para Portugues
+     */
     public static void fileChooserSettings()
     {
         UIManager.put
