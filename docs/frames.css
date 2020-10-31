@@ -28,17 +28,11 @@
 
 }
 
-.frame-sections a
+.frame-sections a, a:visited
 {
     text-decoration: none;
     color: royalblue;
  
-}
-
-.frame-sections a:visited
-{
-    color: royalblue;
-
 }
 
 .frame-sections ul
@@ -60,4 +54,29 @@
 {
     font-family: 'Courier New', Courier, monospace;
 }
+
+a.nav-button, a.nav-button:visited
+{
+    display: block;
+    background-color:rgb(141, 135, 135);
+    color: white;
+    padding: 15px 32px;
+    margin-right: 10px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-button-prev
+{
+    float: left;
+}
+
+.nav-button-next
+{
+    float: right;
+}
+
 
