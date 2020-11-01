@@ -1,5 +1,6 @@
 /build/
 
+/html/
 
 *.class
 
@@ -8,3 +9,4 @@
 /doc/*.html
 
 *.7z
+/dist/

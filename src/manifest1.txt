@@ -1,0 +1,2 @@
+Main-Class: br.com.hkp.showemojis.apps.Normalize
+Name: br/com/hkp/showemojis/apps/Normalize.class

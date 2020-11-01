@@ -2,9 +2,11 @@ package br.com.hkp.showemojis.normalizefilenames;
 
 import br.com.hkp.showemojis.global.Global;
 import static br.com.hkp.showemojis.global.Global.EMOJIS_DIRNAME;
-import br.com.hkp.showemojis.normalizefilenames.gui.NormalizeFrame;
+import br.com.hkp.showemojis.gui.Frame;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
+import java.io.PrintWriter;
 import javax.swing.JFileChooser;
 
 /******************************************************************************
@@ -115,6 +117,8 @@ import javax.swing.JFileChooser;
 public final class NormalizeFilenames
 {
     
+    private PrintWriter printWriter;
+    
     
     /*[00]---------------------------------------------------------------------
         
@@ -124,7 +128,11 @@ public final class NormalizeFilenames
      */
     public NormalizeFilenames()
     {
-        Global.fileChooserSettings();
+        Global.fileChooserSettings
+        (
+            "Selecione o Diret\u00f3rio com os Arquivos de Imagens de Emojis"
+        );
+   
     }//construtor
     
     /*[01]---------------------------------------------------------------------
@@ -158,10 +166,13 @@ public final class NormalizeFilenames
      * Normaliza os nomes dos arquivos PNG e os move para uma pasta propria.
      * 
      * @param dir O diretorio onde estao os arquivo a serem normalizados
+     * 
+     * @throws java.io.FileNotFoundException
      */
-    public void normalize(final File dir)
+    public void normalize(final File dir) throws FileNotFoundException
     {
-        NormalizeFrame normalizeFrame = new NormalizeFrame();
+                
+        Frame normalizeFrame = new Frame();
         
         File[] fileList = dir.listFiles(new EmojiFileFilter());
         
@@ -191,6 +202,8 @@ public final class NormalizeFilenames
         String newDirName = newDir.getAbsolutePath();
         
         if (!newDir.exists()) newDir.mkdir();
+        
+        printWriter = new PrintWriter(newDirName + "/_emoji-list.txt");
         /*--------------------------------------------------------------------*/
         
         int barValue = 0; //contador de num. de arquivos jah normalizados
@@ -232,6 +245,10 @@ public final class NormalizeFilenames
                 replaceAll("_[0-9a-f]+","").
                 replaceAll("-fe0f","");
             
+            String logLine = String.format("%-95s  %s", prefix, sufix);
+            
+            printWriter.println(logLine);
+            
             /*-----------------------------------------------------------------
             O arquivo eh renomeado fazendo com que seja movido para o diretorio
             recem criado
@@ -252,6 +269,10 @@ public final class NormalizeFilenames
         }//fim do for 
         
         normalizeFrame.setTitle(barValue + " arquivos normalizados");
+        
+        printWriter.close();
+        
+        java.awt.Toolkit.getDefaultToolkit().beep();
          
     }//normalize()
       

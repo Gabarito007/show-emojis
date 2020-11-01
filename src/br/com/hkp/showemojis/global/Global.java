@@ -19,19 +19,24 @@ public final class Global
      */
     public static final String EMOJIS_DIRNAME = "emoji-images";
     
+    /**
+     * Esta string eh acrescentada a um arquivo que seja copia do original.
+     * Se o original for, por exemplo, index.html, sua copia editada serah
+     * nomeada como index.showemojis.html
+     */
+    public static final String SHOW_EMOJIS = ".showemojis";
+    
     /*[00]---------------------------------------------------------------------
     
     -------------------------------------------------------------------------*/
     /**
      * Configura os textos do objeto FileChooser para Portugues
+     * 
+     * @param title Um titulo para a janela
      */
-    public static void fileChooserSettings()
+    public static void fileChooserSettings(String title)
     {
-        UIManager.put
-        (
-            "FileChooser.openDialogTitleText", 
-            "Selecione o Diret\u00f3rio com os Arquivos de Imagens de Emojis"
-        );
+        UIManager.put("FileChooser.openDialogTitleText", title);
         UIManager.put("FileChooser.lookInLabelText", "Selecionar"); 
         UIManager.put("FileChooser.openButtonText", "Abrir"); 
         UIManager.put("FileChooser.cancelButtonText", "Cancelar");
@@ -64,7 +69,7 @@ public final class Global
             "Data de Altera\u00e7\u00e3o.");
         UIManager.put
         (
-            "FileChooser.acceptAllFileFilterText", "Todos os Arquivos"
+            "FileChooser.acceptAllFileFilterText", "Diret\u00f3rio"
         );
     }//FileChooserSettings()
     

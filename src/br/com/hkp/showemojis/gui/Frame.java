@@ -1,4 +1,4 @@
-package br.com.hkp.showemojis.normalizefilenames.gui;
+package br.com.hkp.showemojis.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -17,7 +17,7 @@ import javax.swing.ScrollPaneConstants;
  * @version v1.0
  *****************************************************************************/
 
-public final class NormalizeFrame extends JFrame
+public final class Frame extends JFrame
 {
     private final JTextArea jTextArea;
     private final JScrollPane jScrollPane;
@@ -29,7 +29,7 @@ public final class NormalizeFrame extends JFrame
     /**
      * Configura a janela.
      */
-    public NormalizeFrame()
+    public Frame()
     {
         super("Normalizando...");
         
@@ -114,7 +114,7 @@ public final class NormalizeFrame extends JFrame
     }//println()
       
     
-}//classe NormalizeFrame
+}//classe Frame
 
 
  

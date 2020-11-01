@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"br.com.hkp.showemojis.global","l":"Global"},{"p":"br.com.hkp.showemojis.apps","l":"Normalize"},{"p":"br.com.hkp.showemojis.normalizefilenames","l":"NormalizeFilenames"},{"p":"br.com.hkp.showemojis.normalizefilenames.gui","l":"NormalizeFrame"},{"p":"br.com.hkp.showemojis","l":"Utf8ToCodepoints"}]

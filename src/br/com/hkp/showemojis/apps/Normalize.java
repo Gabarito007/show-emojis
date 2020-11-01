@@ -2,6 +2,7 @@ package br.com.hkp.showemojis.apps;
 
 import br.com.hkp.showemojis.normalizefilenames.NormalizeFilenames;
 import java.io.File;
+import java.io.FileNotFoundException;
 
 /******************************************************************************
  * O conjunto de arquivos PNG que se obtem no download da pagina 
@@ -130,12 +131,19 @@ public class Normalize
                 
         if (dir == null) System.exit(0);
         
-        /*
-        Chama o metodo para normalizar os nomes dos arquivos neste diretorio
-        e mover estes arquivos para agrupa-los todos em um outro diretorio 
-        especifico.
-        */
-        normalizeFilenames.normalize(dir);
+        try
+        {
+            /*
+            Chama o metodo para normalizar os nomes dos arquivos neste diretorio
+            e mover estes arquivos para agrupa-los todos em um outro diretorio
+            especifico.
+            */
+            normalizeFilenames.normalize(dir);
+        }
+        catch (FileNotFoundException ex)
+        {
+            System.err.println(ex);
+        }
          
     }//main()
     

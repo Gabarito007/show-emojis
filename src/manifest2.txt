@@ -1,0 +1,2 @@
+Main-Class: br.com.hkp.showemojis.apps.ShowEmojis
+Name: br/com/hkp/showemojis/apps/ShowEmojis.class
