@@ -115,13 +115,20 @@ public final class WhatsAppEditor
     }//readFile()
         
     /*[02]---------------------------------------------------------------------
-      Recebe uma string codificada em utf8 que eh o emoji a ser exibido e que
-      foi lida do valor do atributo alt. Na tag que insere emojis na pagina.
-    
-      Esta string eh utilizada para encontrar o nome do arquivo que tem a 
-      figura correspondente a este emoji.
+      
     -------------------------------------------------------------------------*/
-    private String utf8EmojiToFilename(final String utf8Emoji)
+    /**
+     * Recebe uma string codificada em utf8 que eh o emoji a ser exibido e que
+     * foi lida do valor do atributo alt. Na tag que insere emojis na pagina.
+     *
+     * Esta string eh utilizada para encontrar o nome do arquivo que tem a 
+     * figura correspondente a este emoji.
+     * 
+     * @param utf8Emoji Um emoji codificado em utf8
+     * 
+     * @return O nome que deve ter o arquivo PNG com a imagem deste emoji
+     */
+    public static String utf8EmojiToFilename(final String utf8Emoji)
     {
         StringBuilder filename = new StringBuilder(64);
         
@@ -180,7 +187,7 @@ public final class WhatsAppEditor
                 utf8EmojiToFilename(utf8Emoji) +
                 "\" atl=\"" +
                 utf8Emoji +
-                "\" width=\"34px\" height=\"34px\">";
+                "\" width=\"20px\" height=\"20px\">";
         } 
         else
             return null;

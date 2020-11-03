@@ -82,30 +82,69 @@ ul#menu li:hover + div
     display: block;
 }
 
-
 /*-------------------------------------------------------------------------
-                  Configura o indice da documentacao
+           Configura o sidebar que exibe o indice da documentacao
 -------------------------------------------------------------------------*/
-ul#indice
+nav#sidebar
 {
-    list-style: none;
+    display: none;
+    float: left;
+    overflow: auto;
+    height: 88vh;
+    border-top: solid 1px lightgrey;
+    background-color: rgb(141, 135, 135);
 }
 
-ul#indice li
+
+nav#sidebar ul
 {
-    margin: 10px;
+    list-style-position: inside;
+    list-style-type: none;
 }
 
-ul#indice li a
+nav#sidebar a
 {
     text-decoration: none;
     color: black;
 }
 
-ul#indice li a:hover
+nav#sidebar a:hover
 {
     color: white;
     padding-left: 10px;
+}
+
+/*-------------------------------------------------------------------------
+                  Configura o indice da documentacao
+-------------------------------------------------------------------------*/
+ul#indice-level1 li
+{
+    margin: 10px 10px;
+}
+
+ul#indice-level2 li
+{
+    margin: 10px 25px;
+}
+
+ul#indice-level3 li
+{
+    margin: 10px 40px;
+}
+
+ul#indice-level4 li
+{
+    margin: 10px 55px;
+}
+
+ul#indice-level5 li
+{
+    margin: 10px 70px;
+}
+
+ul#indice-level6 li
+{
+    margin: 10px 85px;
 }
 
 
@@ -133,20 +172,6 @@ input[type="checkbox"]:checked ~ label
    background-color: black;
 }
 
-
-
-/*-------------------------------------------------------------------------
-           Configura o sidebar que exibe o indice da documentacao
--------------------------------------------------------------------------*/
-nav#sidebar
-{
-    display: none;
-    float: left;
-    overflow: auto;
-    height: 88vh;
-    border-top: solid 1px lightgrey;
-    background-color: rgb(141, 135, 135);
-}
 
 /*-------------------------------------------------------------------------
       Configura o frame onde serao exibidas as paginas da documentacao

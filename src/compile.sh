@@ -47,6 +47,9 @@ jar cfm Normalize.jar manifest1.txt br/com/hkp/showemojis/apps/*.class br/com/hk
  
 jar cfm ShowEmojis.jar manifest2.txt br/com/hkp/showemojis/apps/*.class br/com/hkp/showemojis/global/*.class br/com/hkp/showemojis/*.class br/com/hkp/showemojis/gui/*.class 
 
+
+jar cfm EmojiDecoder.jar manifest3.txt br/com/hkp/showemojis/apps/*.class br/com/hkp/showemojis/global/*.class br/com/hkp/showemojis/*.class br/com/hkp/showemojis/gui/*.class 
+
 echo ""
 echo "------ ARQUIVOS JAR  CRIADOS --------"
 
