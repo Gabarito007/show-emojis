@@ -11,6 +11,9 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 
 /******************************************************************************
+ * Metodos para criar uma copia de uma pagina HTML WhatsApp Web com os emojis 
+ * renderizados.
+ * 
  * @author "Pedro Reis"
  * @since 1 de novembro de 2020 v1.0
  * @version v1.0

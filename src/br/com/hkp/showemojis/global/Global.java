@@ -25,7 +25,7 @@ public final class Global
      * nomeada como index.showemojis.html
      */
     public static final String SHOW_EMOJIS = ".showemojis";
-    
+       
     /*[00]---------------------------------------------------------------------
     
     -------------------------------------------------------------------------*/

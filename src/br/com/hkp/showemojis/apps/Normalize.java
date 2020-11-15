@@ -105,7 +105,7 @@ import java.io.FileNotFoundException;
  * @version v1.0
  *****************************************************************************/
 
-public class Normalize
+public final class Normalize
 {
 
    /*[00]---------------------------------------------------------------------
