@@ -54,7 +54,7 @@ public final class EmojiDecoderFrame extends JFrame
         JTextArea warning = new JTextArea();
         warning.setEditable(false);
         warning.setBorder(new TitledBorder(""));
-        warning.setBackground(Color.yellow);
+        warning.setBackground(new Color(120,190,200));
         warning.setFont(new Font(Font.MONOSPACED, 0, 13));
         
         warning.setText
