@@ -10,7 +10,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -185,7 +184,7 @@ public final class WhatsAppEditor
             return 
                 "<img src=\"" + 
                 utf8EmojiToFilename(utf8Emoji) +
-                "\" atl=\"" +
+                "\" alt=\"" +
                 utf8Emoji +
                 "\" width=\"20px\" height=\"20px\">";
         } 
@@ -195,36 +194,23 @@ public final class WhatsAppEditor
     }//getNewTag()
     
     /*[04]---------------------------------------------------------------------
-    Retorna um HashSet com todas as tags que inserem emojis que foram 
-    localizadas no arquivo. Sem duplicatas.
-    -------------------------------------------------------------------------*/
-    private HashSet<String> collectTags() throws IOException
-    {
-        Matcher matcher = EMOJI_TAG_PATTERN.matcher(originalHtmlContent);
-        
-        HashSet<String> tags = new HashSet<>();
-        
-        while (matcher.find()) tags.add(matcher.group());
-        
-        return tags;
-   
-    }//collectTags()
-    
-    /*[05]---------------------------------------------------------------------
       Retorna um HashMap associando cada tag que foi encontrada no arquivo
       original a tag que deve substitui-la na copia editada deste arquivo.
     -------------------------------------------------------------------------*/
-    private HashMap<String,String> getMap() throws IOException
+    private HashMap<String, String> getMap() throws IOException
     {
+        Matcher matcher = EMOJI_TAG_PATTERN.matcher(originalHtmlContent);
+              
         HashMap<String, String> map = new HashMap<>();
-               
-        for (String oldTag: collectTags()) map.put(oldTag, getNewTag(oldTag));
-     
-        return map;
         
+        while (matcher.find())
+            map.put(matcher.group(), getNewTag(matcher.group()));
+       
+        return map;
+   
     }//getMap()
-    
-    /*[06]---------------------------------------------------------------------
+      
+    /*[05]---------------------------------------------------------------------
         
     -------------------------------------------------------------------------*/
     /**
