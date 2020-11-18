@@ -40,7 +40,7 @@ public final class WhatsAppEditor
     private static final Pattern EMOJI_TAG_PATTERN = 
         Pattern.compile
         (
-            "<img src=\"d5fceb6532643d0d84ffe09c40c481ecdf59e15a\\.gif.+?>"
+            "<img src=\" d5fceb6532643d0d84ffe09c40c481ecdf59e15a\\.gif.+?>"
         );
     
     /*
